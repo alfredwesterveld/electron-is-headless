@@ -1,6 +1,6 @@
 {
   "name": "electron-is-headless",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "test if electron is headless",
   "main": "entry.js",
   "scripts": {
