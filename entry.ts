@@ -14,9 +14,4 @@ function isHeadlessElectron() {
     }
 }
 
-if (!module.parent) {
-    console.log(isHeadlessElectron());
-    window.close();
-} else {
-    module.exports = isHeadlessElectron;
-}
+module.exports = isHeadlessElectron;

@@ -5,7 +5,7 @@ function isHeadlessElectron() {
         return false;
     }
     else if (process.env.DISPLAY) {
-        var displayNumber = process.env.DISPLAY.slice(1);
+        const displayNumber = process.env.DISPLAY.slice(1);
         console.log(displayNumber);
         return parseInt(displayNumber) >= 99;
     }
@@ -13,10 +13,5 @@ function isHeadlessElectron() {
         return true;
     }
 }
-if (!module.parent) {
-    console.log(isHeadlessElectron());
-    window.close();
-}
-else {
-    module.exports = isHeadlessElectron;
-}
+module.exports = isHeadlessElectron;
+//# sourceMappingURL=entry.js.map

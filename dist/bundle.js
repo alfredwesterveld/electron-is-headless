@@ -42,46 +42,24 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+	/// <reference path="./typings/index.d.ts" />
+	'use strict';
 	function isHeadlessElectron() {
 	    if (process.platform === 'win32' || process.platform === 'darwin') {
 	        return false;
 	    }
 	    else if (process.env.DISPLAY) {
-	        const displaynummer = process.env.DISPLAY.slice(1);
-	        console.log(displaynummer);
-	        return parseInt(displaynummer) >= 99;
+	        const displayNumber = process.env.DISPLAY.slice(1);
+	        console.log(displayNumber);
+	        return parseInt(displayNumber) >= 99;
 	    }
 	    else {
 	        return true;
 	    }
 	}
-	if (!module.parent) {
-	    console.log(isHeadlessElectron());
-	    window.close();
-	}
-	else {
-	    module.exports = isHeadlessElectron;
-	}
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
+	module.exports = isHeadlessElectron;
 
 
 /***/ }
