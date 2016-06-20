@@ -1,0 +1,18 @@
+{
+  "name": "electron-is-headless",
+  "version": "1.0.0",
+  "description": "test if electron is headless",
+  "main": "entry.js",
+  "scripts": {
+    "build": "(electron index.js) || true",
+    "build-run": "(webpack && electron index.js) || true",
+    "run": "xvfb-maybe electron index.js --enable-logging",
+    "watch": "webpack-dev-server --inline --hot",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xvfb-maybe": "^0.1.3"
+  }
+}
